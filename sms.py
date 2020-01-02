@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# Download the twilio-python library from http://twilio.com/docs/libraries
+# Download the helper library from https://www.twilio.com/docs/python/install
 import csv, sys 
-from twilio.rest import TwilioRestClient
+from twilio.rest import Client
 
 MESSAGE_FILE = 'message.txt'     # File containing text message
 CSV_FILE = 'participants.csv'    # File containing participant numbers
@@ -43,7 +43,7 @@ print("> {} messages of {} segments each will be sent, at a cost of ${} ".format
 confirm = input("Send these messages? [Y/n] ")
 if confirm[0].lower() == 'y':
     # Set up Twilio client
-    client = TwilioRestClient(account_sid, auth_token)
+    client = Client(account_sid, auth_token)
 
     # Send the messages
     for num in numbers:
