@@ -9,9 +9,9 @@ SMS_LENGTH = 160                 # Max length of one SMS message
 MSG_COST = 0.04                  # Cost per message
 
 # Twilio: Find these values at https://twilio.com/user/account
-account_sid = "<account_sid_goes_here>"
+account_sid = "<account_sid_goes_here>"   # Ensure you remove the angle brackets! < >
 auth_token = "<auth_token_goes_here>"
-from_num = "075changeme"       # 'From' number in Twilio
+from_num = "075changeme"                  # 'From' number in Twilio
 
 # Now put your SMS in a file called message.txt, and it will be read from there.
 with open(MESSAGE_FILE, 'r') as content_file:
