@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # Download the helper library from https://www.twilio.com/docs/python/install
 import csv, sys 
+import time
 from twilio.rest import Client
 
 MESSAGE_FILE = 'message.txt'     # File containing text message
 CSV_FILE = 'participants.csv'    # File containing participant numbers
 SMS_LENGTH = 160                 # Max length of one SMS message
 MSG_COST = 0.04                  # Cost per message
+TIMEOUT_SECONDS = 2              # Sleep time after each text
 
 # Twilio: Find these values at https://twilio.com/user/account
 account_sid = "<account_sid_goes_here>"   # Ensure you remove the angle brackets! < >
@@ -50,5 +52,6 @@ if confirm[0].lower() == 'y':
         # Send the sms text to the number from the CSV file:
         print("Sending to " + num)
         message = client.messages.create(to=num, from_=from_num, body=sms)
+        time.sleep(TIMEOUT_SECONDS)
 
 print("Exiting!")
