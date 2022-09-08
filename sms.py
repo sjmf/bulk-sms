@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Download the helper library from https://www.twilio.com/docs/python/install
+# Note Twilio's rate-limiting documentation: https://www.twilio.com/docs/sms/send-messages#a-note-on-rate-limiting
 import csv, sys 
 import time
 from twilio.rest import Client
